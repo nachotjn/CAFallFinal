@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CAFallAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20619aecdaa9fd8ee812a66f4edf4902841759e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("CAFallAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CAFallAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
