@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nacher\\Desktop\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj": {}
+    "C:\\Users\\Nacho Pino\\OneDrive\\Escritorio\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nacher\\Desktop\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj": {
+    "C:\\Users\\Nacho Pino\\OneDrive\\Escritorio\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nacher\\Desktop\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Nacho Pino\\OneDrive\\Escritorio\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj",
         "projectName": "CAFallAPI",
-        "projectPath": "C:\\Users\\Nacher\\Desktop\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj",
-        "packagesPath": "C:\\Users\\Nacher\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nacher\\Desktop\\CAFallFinal\\API\\CAFallAPI\\obj\\",
+        "projectPath": "C:\\Users\\Nacho Pino\\OneDrive\\Escritorio\\CAFallFinal\\API\\CAFallAPI\\CAFallAPI.csproj",
+        "packagesPath": "C:\\Users\\Nacho Pino\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nacho Pino\\OneDrive\\Escritorio\\CAFallFinal\\API\\CAFallAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nacher\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Nacho Pino\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -40,16 +40,30 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.8.1, )"
             }
           },
           "imports": [
@@ -63,6 +77,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -71,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
