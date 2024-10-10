@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAFallAPI.Tests", "CAFallAPI.Tests\CAFallAPI.Tests.csproj", "{4F048F1B-B1A7-4629-B69C-277EDCEB19C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAFallAPI", "CAFallAPI.csproj", "{9AC94BC3-3243-4AF6-8462-53AC4E28C763}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F048F1B-B1A7-4629-B69C-277EDCEB19C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F048F1B-B1A7-4629-B69C-277EDCEB19C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F048F1B-B1A7-4629-B69C-277EDCEB19C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F048F1B-B1A7-4629-B69C-277EDCEB19C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC94BC3-3243-4AF6-8462-53AC4E28C763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC94BC3-3243-4AF6-8462-53AC4E28C763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC94BC3-3243-4AF6-8462-53AC4E28C763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC94BC3-3243-4AF6-8462-53AC4E28C763}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

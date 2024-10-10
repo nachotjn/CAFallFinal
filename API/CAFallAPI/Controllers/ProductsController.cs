@@ -1,98 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using CAFallAPI.Data;
 using CAFallAPI.Models;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Linq;
+
 namespace CAFallAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public ProductsController(AppDbContext context)
+        public ProductController(AppDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public ActionResult<IEnumerable<Product>> GetProducts(string searchTerm)
         {
-            return await _context.Products.ToListAsync();
-        }
+            var products = _context.Products.AsQueryable();
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-
-            if (product == null)
+            if (!string.IsNullOrWhiteSpace(searchTerm))
             {
-                return NotFound();
+                products = products.Where(p => p.Name.Contains(searchTerm));
             }
 
-            return product;
+            return products.ToList();
         }
 
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public ActionResult<Product> CreateProduct(Product product)
         {
             _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(int id, Product product)
-        {
-            if (id != product.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(product).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool ProductExists(int id)
-        {
-            return _context.Products.Any(e => e.Id == id);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(GetProducts), new { id = product.Id }, product);
         }
     }
 }
