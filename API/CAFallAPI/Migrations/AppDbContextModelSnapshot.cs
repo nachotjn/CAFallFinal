@@ -1,101 +1,98 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+﻿using CAFallAPI;
+using global::Microsoft.EntityFrameworkCore;
+using global::Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace CAFallAPI.Migrations
+namespace global::CAFallAPI.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [global::Microsoft.EntityFrameworkCore.Infrastructure.DbContext(typeof(AppDbContext))]
+    partial class AppDbContextModelSnapshot : global::Microsoft.EntityFrameworkCore.Infrastructure.ModelSnapshot
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(global::Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            global::Microsoft.EntityFrameworkCore.NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("CAFallAPI.Models.Customer", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    global::Microsoft.EntityFrameworkCore.NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    global::Microsoft.EntityFrameworkCore.RelationalEntityTypeBuilderExtensions.ToTable("Customers");
                 });
 
             modelBuilder.Entity("CAFallAPI.Models.Employee", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    global::Microsoft.EntityFrameworkCore.NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("text");
 
-                    b.Property<string>("Position")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    global::Microsoft.EntityFrameworkCore.RelationalEntityTypeBuilderExtensions.ToTable("Employees");
                 });
 
             modelBuilder.Entity("CAFallAPI.Models.Order", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    global::Microsoft.EntityFrameworkCore.NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CustomerId")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Orders");
+                    global::Microsoft.EntityFrameworkCore.RelationalEntityTypeBuilderExtensions.ToTable("Orders");
                 });
 
             modelBuilder.Entity("CAFallAPI.Models.Product", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    global::Microsoft.EntityFrameworkCore.NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("IsDiscontinued")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("boolean");
 
-                    b.Property<string>("Name")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("text");
 
-                    b.Property<int?>("OrderId")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Price")
+                    global::Microsoft.EntityFrameworkCore.RelationalPropertyBuilderExtensions
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Products");
+                    global::Microsoft.EntityFrameworkCore.RelationalEntityTypeBuilderExtensions.ToTable("Products");
                 });
 
             modelBuilder.Entity("CAFallAPI.Models.Order", b =>
@@ -103,7 +100,7 @@ namespace CAFallAPI.Migrations
                     b.HasOne("CAFallAPI.Models.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(global::Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Customer");

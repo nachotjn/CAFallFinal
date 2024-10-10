@@ -1,11 +1,9 @@
 ﻿using Xunit;
-using CAFallAPI.Controllers;
 using Microsoft.EntityFrameworkCore;
-using CAFallAPI.Models;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using CAFallAPI;
+using global.CAFallAPI.Controllers;
+using global.CAFallAPI.Models;
 using Assert = Xunit.Assert;
 
 public class OrderControllerTests

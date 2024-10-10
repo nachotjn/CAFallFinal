@@ -1,14 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using global::System.ComponentModel.DataAnnotations;
 
-namespace CAFallAPI.Models
+namespace global::CAFallAPI.Models
 {
     public class Product
     {
         public int Id { get; set; }
-        [Required]
+        [global::System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
 
-        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero")]
+        [global::System.ComponentModel.DataAnnotations.Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero")]
         public decimal Price { get; set; }
 
         public string Description { get; set; }

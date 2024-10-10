@@ -1,4 +1,4 @@
-﻿namespace CAFallAPI.Models
+﻿namespace global::CAFallAPI.Models
 {
     public class CustomProperty
     {

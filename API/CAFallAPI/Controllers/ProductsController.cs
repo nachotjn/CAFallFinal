@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using CAFallAPI.Models;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CAFallAPI;
+using global::Microsoft.AspNetCore.Mvc;
+using global::CAFallAPI.Models;
+using global::System.Collections.Generic;
+using global::System.Linq;
 
-namespace CAFallAPI.Controllers
+namespace global::CAFallAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductController : ControllerBase
+    [global::Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+    [global::Microsoft.AspNetCore.Mvc.ApiController]
+    public class ProductController : global::Microsoft.AspNetCore.Mvc.ControllerBase
     {
         private readonly AppDbContext _context;
 
@@ -16,8 +17,8 @@ namespace CAFallAPI.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Product>> GetProducts(string searchTerm)
+        [global::Microsoft.AspNetCore.Mvc.HttpGet]
+        public global::Microsoft.AspNetCore.Mvc.ActionResult<global::System.Collections.Generic.IEnumerable<global::CAFallAPI.Models.Product>> GetProducts(string searchTerm)
         {
             var products = _context.Products.AsQueryable();
 
@@ -29,8 +30,8 @@ namespace CAFallAPI.Controllers
             return products.ToList();
         }
 
-        [HttpPost]
-        public ActionResult<Product> CreateProduct(Product product)
+        [global::Microsoft.AspNetCore.Mvc.HttpPost]
+        public global::Microsoft.AspNetCore.Mvc.ActionResult<global::CAFallAPI.Models.Product> CreateProduct(global::CAFallAPI.Models.Product product)
         {
             _context.Products.Add(product);
             _context.SaveChanges();

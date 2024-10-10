@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using CAFallAPI.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using CAFallAPI;
+using global::Microsoft.AspNetCore.Mvc;
+using global::CAFallAPI.Models;
+using global::System.Collections.Generic;
+using global::System.Linq;
+using global::System.Threading.Tasks;
+using global::Microsoft.EntityFrameworkCore;
+using global.CAFallAPI.Models;
+using global.CAFallAPI.Models;
 
-namespace CAFallAPI.Controllers
+namespace global::CAFallAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class OrderController : ControllerBase
+    [global::Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+    [global::Microsoft.AspNetCore.Mvc.ApiController]
+    public class OrderController : global::Microsoft.AspNetCore.Mvc.ControllerBase
     {
         private readonly AppDbContext _context;
 
@@ -18,28 +21,28 @@ namespace CAFallAPI.Controllers
             _context = context;
         }
 
-        [HttpPost]
-        public ActionResult<Order> CreateOrder(Order order)
+        [global::Microsoft.AspNetCore.Mvc.HttpPost]
+        public global::Microsoft.AspNetCore.Mvc.ActionResult<Order> CreateOrder(Order order)
         {
             _context.Orders.Add(order);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetOrders), new { id = order.Id }, order);
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Order>> GetOrders()
+        [global::Microsoft.AspNetCore.Mvc.HttpGet]
+        public global::Microsoft.AspNetCore.Mvc.ActionResult<global::System.Collections.Generic.IEnumerable<Order>> GetOrders()
         {
             return _context.Orders.Include(o => o.OrderItems).ToList();
         }
 
-        public async Task<object> PlaceOrder(Order order)
+        public async global::System.Threading.Tasks.Task<object> PlaceOrder(Order order)
         {
-            throw new System.NotImplementedException();
+            throw new global::System.NotImplementedException();
         }
 
-        public async Task<object> GetOrderHistory()
+        public async global::System.Threading.Tasks.Task<object> GetOrderHistory()
         {
-            throw new System.NotImplementedException();
+            throw new global::System.NotImplementedException();
         }
     }
 }

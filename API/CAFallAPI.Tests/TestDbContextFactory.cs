@@ -1,4 +1,4 @@
-﻿using CAFallAPI.Models;
+﻿using global.CAFallAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CAFallAPI.Tests;
