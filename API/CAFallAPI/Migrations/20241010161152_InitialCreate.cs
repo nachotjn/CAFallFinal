@@ -87,8 +87,7 @@ namespace CAFallAPI.Migrations
                 table: "Products",
                 column: "OrderId");
         }
-
-        /// <inheritdoc />
+        
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
